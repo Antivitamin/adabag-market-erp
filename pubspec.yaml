@@ -1,0 +1,37 @@
+name: adabag_market_erp
+description: "Adabağ Market ERP - Stok ve SKT Takip Portalı"
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Supabase Bulut Veritabanı ve Yetkilendirme
+  supabase_flutter: ^2.8.3
+
+  # Barkod Okuyucu (Kamera)
+  mobile_scanner: ^7.4.2
+
+  # Ürün Fotoğrafı / Kamera / Galeri
+  image_picker: ^1.2.4
+
+  # Tarih Formatlama (Türkçe)
+  intl: 0.20.3
+  shared_preferences: ^2.5.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/Logo.png

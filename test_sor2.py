@@ -1,0 +1,1 @@
+import pymssql; conn=pymssql.connect(server=r'SERVER-AVM\SQLEXPRESS', database='MikroDB_V16_001', as_dict=True); cur=conn.cursor(); cur.execute('SELECT TOP 1 * FROM dbo.STOKLAR_VIEW WHERE sto_kod=\'008893\''); print('VIEW:', cur.fetchone())
