@@ -57078,7 +57078,7 @@ m=A.b([A.cr(k,k,B.pA,k,k,l.gaxA(),k,k,"Kamera ile Barkod Oku")],q)
 if(p.a.a.length!==0)m.push(A.cr(k,k,B.pz,k,k,new A.aT6(l),k,k,k))
 m=A.bq(m,B.p,k,B.j,B.a2,0)
 q=A.b([A.b1(k,A.b9(A.b([new A.ov(p,A.ir(k,new A.fx(4,A.bb(8),B.fB),k,B.kT,k,k,k,k,!0,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,n,"Stok kodu, \xfcr\xfcn ad\u0131 veya barkod ile ara...",k,k,k,k,k,k,k,k,k,!0,!0,!1,k,B.w8,k,k,k,k,k,k,m,k,k,k,k,k),o,k,new A.aT7(l),k),B.cA,A.mb(new A.aT8(l))],q),B.p,B.j,B.o),B.m,B.h,k,k,k,k,k,B.Vz,k,k,k)],q)
-if(l.z!=="sef")q.push(l.ahx(i))
+if(l.z==="admin")q.push(l.ahx(i))
 q.push(l.axK())
 q.push(B.fP)
 if(l.x)p=B.dv
