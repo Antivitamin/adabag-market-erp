@@ -1,6 +1,7 @@
 (() => {
   if (!/Android/i.test(navigator.userAgent) || window.matchMedia('(display-mode: standalone)').matches) return;
   let pending = null;
+  let dismissed = false;
   const panel = document.createElement('div');
   panel.setAttribute('role', 'region');
   panel.setAttribute('aria-label', 'Uygulama kurulumu');
@@ -17,7 +18,7 @@
   Object.assign(help.style,{display:'none',margin:'8px 4px 4px',maxWidth:'260px',lineHeight:'1.4'});
   panel.append(install,close,help);
   document.body.append(panel);
-  const dismiss = () => panel.remove();
+  const dismiss = () => { dismissed = true; panel.remove(); };
   window.setTimeout(dismiss, 5000);
   close.addEventListener('click',dismiss);
   install.addEventListener('click',async () => {
@@ -30,7 +31,8 @@
     } catch (_) { help.style.display='block'; }
   });
   window.addEventListener('beforeinstallprompt',event => {
-    event.preventDefault();pending = event;
+    if (!dismissed) event.preventDefault();
+    pending = event;
   });
   window.addEventListener('appinstalled',() => panel.remove());
 })();
