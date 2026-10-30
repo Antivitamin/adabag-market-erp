@@ -4,7 +4,7 @@
   const panel = document.createElement('div');
   panel.setAttribute('role', 'region');
   panel.setAttribute('aria-label', 'Uygulama kurulumu');
-  Object.assign(panel.style, {position:'fixed',right:'12px',bottom:'max(12px, env(safe-area-inset-bottom))',zIndex:'10000',maxWidth:'calc(100vw - 24px)',background:'#fff',border:'1px solid #c7d2fe',borderRadius:'12px',padding:'8px',boxShadow:'0 4px 16px #0002',fontFamily:'Arial,sans-serif',fontSize:'13px'});
+  Object.assign(panel.style, {position:'fixed',left:'50%',transform:'translateX(-50%)',bottom:'max(12px, env(safe-area-inset-bottom))',zIndex:'10000',maxWidth:'calc(100vw - 24px)',background:'#fff',border:'1px solid #c7d2fe',borderRadius:'12px',padding:'8px',boxShadow:'0 4px 16px #0002',fontFamily:'Arial,sans-serif',fontSize:'13px'});
   const install = document.createElement('button');
   install.type = 'button';
   install.textContent = 'Uygulamayı Yükle';
@@ -17,7 +17,9 @@
   Object.assign(help.style,{display:'none',margin:'8px 4px 4px',maxWidth:'260px',lineHeight:'1.4'});
   panel.append(install,close,help);
   document.body.append(panel);
-  close.addEventListener('click',() => panel.remove());
+  const dismiss = () => panel.remove();
+  window.setTimeout(dismiss, 5000);
+  close.addEventListener('click',dismiss);
   install.addEventListener('click',async () => {
     if (!pending) { help.style.display = help.style.display === 'none' ? 'block' : 'none'; return; }
     const request = pending;pending = null;
